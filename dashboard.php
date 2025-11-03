@@ -6,6 +6,8 @@ $totalMembers = mysqli_fetch_assoc(mysqli_query($conn,"SELECT COUNT(*) AS count 
 $totalPlans = 3; // Basic, Standard, Premium
 ?>
 
+<!-- 4343 -->
+
 <?php
 $totalMembers = mysqli_fetch_assoc(mysqli_query($conn,"SELECT COUNT(*) AS count FROM members"))['count'];
 $totalPlans = 3; // Basic, Standard, Premium
