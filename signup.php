@@ -36,3 +36,44 @@ if(isset($_POST['signup'])) {
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UPDATE table_name
+SET column_name = value
+WHERE id = 2;
+
+ALTER TABLE table_name
+ADD COLUMN status INTEGER DEFAULT 0;
+
+
+ -->
