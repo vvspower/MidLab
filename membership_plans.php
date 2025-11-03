@@ -2,14 +2,14 @@
 include 'db.php';
 if(!isset($_SESSION['user'])) header("Location: index.php");
 
-// Define plan prices
+//plan prices
 $plans = [
     "Basic" => 30,
     "Standard" => 50,
     "Premium" => 80
 ];
 
-// Fetch stats for each plan
+
 $planStats = [];
 foreach($plans as $planName => $price){
     $memberQuery = mysqli_query($conn,"SELECT * FROM members WHERE plan='$planName'");
@@ -18,8 +18,8 @@ foreach($plans as $planName => $price){
     $totalRevenue = 0;
 
     while($m = mysqli_fetch_assoc($memberQuery)){
-        $totalMonths += $m['months'] ?? 0;   // FIXED: default to 0 if key missing
-        $totalRevenue += $m['fee'] ?? 0;     // FIXED: default to 0 if key missing
+        $totalMonths += $m['months'] ?? 0;   
+        $totalRevenue += $m['fee'] ?? 0;     
     }
 
     $avgRevenue = $membersCount > 0 ? $totalRevenue / $membersCount : 0;
@@ -33,7 +33,7 @@ foreach($plans as $planName => $price){
     ];
 }
 
-// Calculate overall totals
+
 $totalRevenueAll = array_sum(array_column($planStats, 'revenue'));
 $totalMembersAll = array_sum(array_column($planStats, 'members'));
 $totalMonthsAll = array_sum(array_column($planStats, 'months'));

@@ -2,7 +2,6 @@
 include 'db.php';
 if(!isset($_SESSION['user'])) header("Location: index.php");
 
-// Pre-select plan if coming from membership_plans.php
 $selectedPlan = isset($_GET['plan']) ? $_GET['plan'] : '';
 $planPrices = ["Basic"=>30,"Standard"=>50,"Premium"=>80];
 
@@ -13,7 +12,7 @@ if(isset($_POST['submit'])) {
     $plan = $_POST['plan'];
     $months = (int)$_POST['months'];
     $price = $planPrices[$plan];
-    $discount = $months >= 6 ? 0.1 : 0; // 10% discount for 6+ months
+    $discount = $months >= 6 ? 0.1 : 0; 
     $fee = $price * $months * (1-$discount);
 
     $image = $_FILES['image']['name'];
@@ -21,6 +20,7 @@ if(isset($_POST['submit'])) {
     move_uploaded_file($_FILES['image']['tmp_name'], $target);
 
     if($name && $email && $plan && $months > 0){
+
         mysqli_query($conn,"INSERT INTO members (name,email,phone,plan,join_date,fee,image,months)
                   VALUES ('$name','$email','$phone','$plan',CURDATE(),'$fee','$image','$months')");
         echo "<script>alert('Member added successfully');window.location='members.php';</script>";
@@ -108,6 +108,7 @@ if(isset($_POST['submit'])) {
         <label>Months:</label>
         <input type="number" name="months" id="monthsInput" value="1" min="1" onchange="updateFee()" required><br>
         <input type="number" name="fee" id="feeInput" readonly placeholder="Fee will auto-update"><br>
+        
         <div class="calc-display" id="calcDisplay"></div>
 
         <input type="file" name="image" required><br>

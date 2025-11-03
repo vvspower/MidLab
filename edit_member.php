@@ -11,7 +11,6 @@ if(!$member){
     exit;
 }
 
-// Plan prices
 $planPrices = ["Basic"=>30,"Standard"=>50,"Premium"=>80];
 
 if(isset($_POST['submit'])){
