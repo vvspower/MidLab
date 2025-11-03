@@ -1,0 +1,120 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f0ff;
+    color: #333;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #5a2ca0;
+    padding: 15px 30px;
+}
+
+.navbar a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar .logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar .logout {
+    background: #ff4d6d;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.navbar .logout:hover {
+    background: #ff1f4b;
+}
+
+.container, .content {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+}
+
+h1, h2, h3 {
+    color: #5a2ca0;
+}
+
+form input, form select, button {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+form input, form select {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background: #5a2ca0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #401f73;
+}
+
+.error {
+    color: #e74c3c;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    background: #5a2ca0;
+    color: white;
+}
+
+img {
+    border-radius: 6px;
+}
+
+.card {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    background: #f8f5ff;
+    text-align: center;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.card button {
+    width: auto;
+}
